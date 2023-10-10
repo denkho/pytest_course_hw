@@ -127,8 +127,6 @@ venv/
 ENV/
 env.bak/
 venv.bak/
-.vscode
-.vscode/
 
 
 # Spyder project settings
@@ -154,6 +152,9 @@ dmypy.json
 
 # Cython debug symbols
 cython_debug/
+
+# VSCode
+.vscode/
 
 # PyCharm
 #  JetBrains specific template is maintained in a separate JetBrains.gitignore that can
