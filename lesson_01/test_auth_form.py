@@ -6,15 +6,18 @@ driver = webdriver.Chrome()
 
 URL = "https://www.saucedemo.com/"
 
+
+
 def test_login_form_positive():
-    """Позитивные тесты для проверки авторизации"""
+    """Позитивный тест авторизации с корректными данными"""
     driver.get(URL)
+    test_data = ["standard_user", "secret_sauce"]
 
     username_field = driver.find_element(By.XPATH, '//input[@data-test="username"]')
-    username_field.send_keys("standard_user")
+    username_field.send_keys(test_data[0])
 
     passwd_field = driver.find_element(By.XPATH, '//input[@data-test="password"]')
-    passwd_field.send_keys("secret_sauce")
+    passwd_field.send_keys(test_data[1])
 
     lgn_btn = driver.find_element(By.XPATH, '//input[@data-test="login-button"]')
     lgn_btn.click()
@@ -32,6 +35,29 @@ def test_login_form_positive():
     logout_link.click()
 
     time.sleep(5)
+
+    assert driver.current_url == URL
+    
+
+def test_login_form_negative():
+    """Негативный тест авторизации с некорректными данными"""
+    
+    driver.get(URL)
+    test_data = ["user", "user"]
+
+    username_field = driver.find_element(By.XPATH, '//input[@data-test="username"]')
+    username_field.send_keys(test_data[0])
+
+    passwd_field = driver.find_element(By.XPATH, '//input[@data-test="password"]')
+    passwd_field.send_keys(test_data[1])
+
+    lgn_btn = driver.find_element(By.XPATH, '//input[@data-test="login-button"]')
+    lgn_btn.click()
+
+    time.sleep(5)
+    
+    error_message = driver.find_element(By.XPATH, '//h3[@data-test="error"]')
+    assert error_message.text == "Epic sadface: Username and password do not match any user in this service"
 
     assert driver.current_url == URL
 
