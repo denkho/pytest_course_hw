@@ -42,7 +42,6 @@ def test_login_form_positive():
 def test_login_form_negative():
     """Негативный тест авторизации с некорректными данными"""
     
-    driver.get(URL)
     test_data = ["user", "user"]
 
     username_field = driver.find_element(By.XPATH, '//input[@data-test="username"]')
