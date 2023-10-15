@@ -19,6 +19,7 @@ def login():
     driver.find_element(By.XPATH, '//input[@data-test="login-button"]').click()
 
 def test_go_to_item_from_inventory_by_item_title():
+    """Checks if is possible to go to item card after click on item title in inventory"""
     login()
 
     item_name = driver.find_element(By.XPATH, '//div[@class="inventory_item_name"]').text
@@ -29,7 +30,7 @@ def test_go_to_item_from_inventory_by_item_title():
 
 
 def test_go_to_item_from_inventory_by_item_image():
-
+    """Checks if is possible to go to item card after click on item image in inventory"""
     driver.get(URL_INVENTORY)
     time.sleep(3)
     item_name = driver.find_element(By.XPATH, '//div[@class="inventory_item_name"]').text
