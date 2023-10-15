@@ -90,7 +90,6 @@ def test_cart_remove_through_item_card():
     assert check_exists_by_xpath('//button[starts-with(@data-test, "remove")]') == False
 
     driver.quit()
-# //*[@class="inventory_item"]//div[@class="inventory_item_name"].text()
-# //*[@class="inventory_item"]//button[@data-test="add-to-cart-sauce-labs-backpack"]
+
     
 

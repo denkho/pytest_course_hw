@@ -37,4 +37,4 @@ def test_go_to_item_from_inventory_by_item_image():
     print(item_name)
     assert URL_ITEM in driver.current_url
     assert driver.find_element(By.XPATH, '//div[@class="inventory_details_name large_size"]').text == item_name 
-    driver.close()
+    driver.quit()
