@@ -27,8 +27,9 @@ def item_name_to_selector_button(name: str, button: str) -> str:
 
 def test_checkout_positive():
     login()
-
-    item_name = driver.find_element(By.XPATH, '//div[@class="inventory_item_name"]').text
+    
+    time.sleep(10)
+    item_name = driver.find_element(By.XPATH, '//div[@class="inventory_item_name "]').text
     item_name_selector = item_name_to_selector_button(item_name, 'add-to-cart')
 
     driver.find_element(By.XPATH, '//button[@data-test="' + item_name_selector + '"]').click()

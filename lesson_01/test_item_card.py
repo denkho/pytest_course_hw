@@ -22,8 +22,8 @@ def test_go_to_item_from_inventory_by_item_title():
     """Checks if is possible to go to item card after click on item title in inventory"""
     login()
 
-    item_name = driver.find_element(By.XPATH, '//div[@class="inventory_item_name"]').text
-    driver.find_element(By.XPATH, '//div[@class="inventory_item_name"]').click()
+    item_name = driver.find_element(By.XPATH, '//div[@class="inventory_item_name "]').text
+    driver.find_element(By.XPATH, '//div[@class="inventory_item_name "]').click()
     time.sleep(3)
     assert URL_ITEM in driver.current_url
     assert driver.find_element(By.XPATH, '//div[@class="inventory_details_name large_size"]').text == item_name 
@@ -33,7 +33,7 @@ def test_go_to_item_from_inventory_by_item_image():
     """Checks if is possible to go to item card after click on item image in inventory"""
     driver.get(URL_INVENTORY)
     time.sleep(3)
-    item_name = driver.find_element(By.XPATH, '//div[@class="inventory_item_name"]').text
+    item_name = driver.find_element(By.XPATH, '//div[@class="inventory_item_name "]').text
     driver.find_element(By.XPATH, '//img[@class="inventory_item_img"]').click()
     print(item_name)
     assert URL_ITEM in driver.current_url
