@@ -1,13 +1,11 @@
-from selenium import webdriver
-from selenium.webdriver.common.by import By
-from selenium.webdriver.chrome.options import Options
 import time
 
+from selenium import webdriver
+from selenium.webdriver.common.by import By
 
-options = Options()
-options.add_argument('--ignore-certificate-errors-spki-list')
-options.add_argument('ignore-certificate-errors')
-options.add_argument('--ignore-ssl-errors')
+
+options = webdriver.ChromeOptions()
+options.add_experimental_option("excludeSwitches", ["enable-logging"])
 
 driver = webdriver.Chrome(options=options)
 
