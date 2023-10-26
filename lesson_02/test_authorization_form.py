@@ -11,13 +11,12 @@ def test_login_form(driver):
     driver.find_element(By.XPATH, locators.LOGIN_BUTTON).click()
 
     driver.implicitly_wait(5)
-
+    
     assert driver.current_url == data.INVENTORY_URL, "Positive login failed"
 
 
-# Разлогиниваемся для следующего теста
-
 def test_login_form_negative(driver):
+    """Проверяем негативный сценарий логина с некорректными данными"""
     driver.get(data.MAIN_URL)
 
     driver.find_element(By.XPATH, locators.LOGIN_FIELD).send_keys(data.LOGIN_NEGATIVE)
