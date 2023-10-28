@@ -1,19 +1,7 @@
-import data
 import locators
 
-
-def login(driver):
-    """Функция для авторизации в тестах"""
-    driver.get(data.MAIN_URL)
-    driver.implicitly_wait(3)
-    driver.find_element(*locators.LOGIN_FIELD).send_keys(data.LOGIN)
-    driver.find_element(*locators.PASSWORD_FIELD).send_keys(data.PASSWORD)
-    driver.find_element(*locators.LOGIN_BUTTON).click()
-
-
-def test_inventory_AZ_filter(driver):
+def test_inventory_AZ_filter(driver, authorise):
     """Тест фильтра AZ"""
-    login(driver)
 
     # собираем перечень названий элементов в список для последующей проверки фильтром
     items = driver.find_elements(*locators.INVENTORY_ITEM)
@@ -31,9 +19,8 @@ def test_inventory_AZ_filter(driver):
     assert sorted(items_lst_start) == items_lst_filtered
 
 
-def test_inventory_ZA_filter(driver):
+def test_inventory_ZA_filter(driver, authorise):
     """Тест фильтра ZA"""
-    login(driver)
 
     # собираем перечень названий элементов в список для последующей проверки фильтром
     items = driver.find_elements(*locators.INVENTORY_ITEM)
@@ -49,9 +36,8 @@ def test_inventory_ZA_filter(driver):
 
     assert sorted(items_lst_start, reverse=True) == items_lst_filtered
 
-def test_inventory_price_low_high_sort_filter(driver):
+def test_inventory_price_low_high_sort_filter(driver, authorise):
     """Тест фильтра цен от низкой к высокой"""
-    login(driver)
 
     # собираем список цен элементов
     prices = driver.find_elements(*locators.INVENTORY_ITEM_PRICE)
@@ -70,9 +56,8 @@ def test_inventory_price_low_high_sort_filter(driver):
     assert sorted(prices_lst_start) == prices_lst_filtered
 
 
-def test_inventory_price_high_low_sort_filter(driver):
+def test_inventory_price_high_low_sort_filter(driver, authorise):
     """Тест фильтра цен от высокой к низкой"""
-    login(driver)
 
     # собираем список цен элементов
     prices = driver.find_elements(*locators.INVENTORY_ITEM_PRICE)
@@ -89,4 +74,3 @@ def test_inventory_price_high_low_sort_filter(driver):
 
     # сравниваем, что получилось
     assert sorted(prices_lst_start, reverse=True) == prices_lst_filtered
-    
