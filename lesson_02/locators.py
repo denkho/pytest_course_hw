@@ -10,6 +10,9 @@ LOGIN_BUTTON = (By.XPATH, '//input[@data-test="login-button"]')
 # BURGER MENU
 
 BURGER_MENU_BUTTON_ICON = (By.XPATH, '//button[@id="react-burger-menu-btn"]')
+BURGER_MENU_LOGOUT_TEXT = (By.LINK_TEXT, 'Logout')
+BURGER_MENU_ABOUT = (By.XPATH, '//a[@id="about_sidebar_link"]')
+BURGER_MENU_RESET = (By.XPATH, '//a[@id="reset_sidebar_link"]')
 
 
 # MESSAGES
@@ -21,6 +24,9 @@ ERROR_MESSAGE_LOGIN_FORM = (By.XPATH, '//h3[@data-test="error"]')
 
 INVENTORY_ITEM = (By.XPATH, '//div[@class="inventory_item_name"]')
 INVENTORY_ITEM_PRICE = (By.XPATH, '//div[@class="inventory_item_price"]')
+ADD_TO_CART_BACKPACK = (By.XPATH, '//button[@data-test="add-to-cart-sauce-labs-backpack"]')
+ADD_TO_CART_BOLTTSHIRT = (By.XPATH, '//button[@data-test="add-to-cart-sauce-labs-bolt-t-shirt"]')
+ITEMS = ["Sauce Labs Bolt T-Shirt", "Sauce Labs Backpack"]
 
 
 # FILTERS
@@ -30,3 +36,7 @@ ZA_FILTER = (By.XPATH, '//option[@value="za"]')
 AZ_FILTER = (By.XPATH, '//option[@value="az"]')
 LOHI_FILTER = (By.XPATH, '//option[@value="lohi"]')
 HILO_FILTER = (By.XPATH, '//option[@value="hilo"]')
+
+
+# CART
+REMOVE_BUTTON = '//button[starts-with(@data-test, "remove")]'

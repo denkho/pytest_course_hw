@@ -1,10 +1,19 @@
 import pytest
 from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
 import data, locators
 
+
+
 @pytest.fixture()
-def driver():
-    drvr = webdriver.Chrome()
+def options():
+    options = Options()
+    options.add_experimental_option("excludeSwitches", ["enable-logging"])
+    return options
+
+@pytest.fixture()
+def driver(options):   
+    drvr = webdriver.Chrome(options=options)
     yield drvr
     print("\nquit browser")
     drvr.quit()
