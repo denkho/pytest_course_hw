@@ -9,6 +9,7 @@ import data, locators
 def options():
     options = Options()
     options.add_experimental_option("excludeSwitches", ["enable-logging"])
+    options.add_argument('--headless')
     return options
 
 @pytest.fixture()
