@@ -26,6 +26,7 @@ INVENTORY_ITEM = (By.XPATH, '//div[@class="inventory_item_name"]')
 INVENTORY_ITEM_PRICE = (By.XPATH, '//div[@class="inventory_item_price"]')
 ADD_TO_CART_BACKPACK = (By.XPATH, '//button[@data-test="add-to-cart-sauce-labs-backpack"]')
 ADD_TO_CART_BOLTTSHIRT = (By.XPATH, '//button[@data-test="add-to-cart-sauce-labs-bolt-t-shirt"]')
+BUTTON_INVENTORY_PARTIAL = (By.XPATH, '//button[@data-test=')
 ITEMS = ["Sauce Labs Bolt T-Shirt", "Sauce Labs Backpack"]
 
 
@@ -39,4 +40,14 @@ HILO_FILTER = (By.XPATH, '//option[@value="hilo"]')
 
 
 # CART
-REMOVE_BUTTON = '//button[starts-with(@data-test, "remove")]'
+REMOVE_BUTTON = (By.XPATH, '//button[starts-with(@data-test, "remove")]')
+
+# CHECKOUT
+CHECKOUT_BUTTON = (By.XPATH, '//button[@data-test="checkout"]')
+CONTINUE_BUTTON = (By.XPATH, '//input[@data-test="continue"]')
+FINISH_BUTTON = (By.XPATH, '//button[@data-test="finish"]')
+CHECKOUT_FIRST_NAME = (By.XPATH, '//input[@data-test="firstName"]')
+CHECKOUT_LAST_NAME = (By.XPATH, '//input[@data-test="lastName"]')
+CHEKCOUT_POSTAL_CODE = (By.XPATH, '//input[@data-test="postalCode"]')
+CHECKOUT_TITLE = (By.XPATH, '//span[@class="title"]')
+CHECKOUT_COMPLETE_HEADER = (By.XPATH, '//h2[@class="complete-header"]')
