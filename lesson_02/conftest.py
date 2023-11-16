@@ -9,7 +9,7 @@ import data, locators
 def options():
     options = Options()
     options.add_experimental_option("excludeSwitches", ["enable-logging"])
-    options.add_argument('--headless')
+    # options.add_argument('--headless')
     # options.page_load_strategy = 'none'
     options.page_load_strategy = 'eager'
     # options.page_load_strategy = 'normal'

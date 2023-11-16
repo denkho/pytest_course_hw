@@ -23,6 +23,7 @@ ERROR_MESSAGE_LOGIN_FORM = (By.XPATH, '//h3[@data-test="error"]')
 # INVENTORY
 
 INVENTORY_ITEM = (By.XPATH, '//div[@class="inventory_item_name"]')
+INVENTORY_ITEM_WITH_SPACE = (By.XPATH, '//div[@class="inventory_item_name "]')
 INVENTORY_ITEM_PRICE = (By.XPATH, '//div[@class="inventory_item_price"]')
 ADD_TO_CART_BACKPACK = (By.XPATH, '//button[@data-test="add-to-cart-sauce-labs-backpack"]')
 ADD_TO_CART_BOLTTSHIRT = (By.XPATH, '//button[@data-test="add-to-cart-sauce-labs-bolt-t-shirt"]')

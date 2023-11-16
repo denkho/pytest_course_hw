@@ -1,4 +1,4 @@
-from selenium import webdriver
+from selenium.webdriver.common.by import By
 import data, locators
 
 
@@ -9,10 +9,10 @@ def item_name_to_selector_button(name: str, button: str) -> str:
 
 
 def test_checkout_positive(driver, authorise):
-    item_name = driver.find_element(*locators.INVENTORY_ITEM).text
+    item_name = driver.find_element(*locators.INVENTORY_ITEM_WITH_SPACE).text
     item_name_selector = item_name_to_selector_button(item_name, 'add-to-cart')
 
-    driver.find_element(*locators.BUTTON_INVENTORY_PARTIAL + item_name_selector + '"]').click()
+    driver.find_element(By.XPATH, '//button[@data-test="' + item_name_selector + '"]').click()
     
     driver.implicitly_wait(3)
     driver.get(data.CART_URL)
